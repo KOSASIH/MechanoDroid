@@ -1,0 +1,39 @@
+{
+  "model_name": "MechaBot-X1",
+  "model_type": "Object Detection",
+  "framework": "TensorFlow",
+  "framework_version": "2.5.0",
+  "description": "MechaBot-X1 is an advanced object detection model designed for robotics applications.",
+  "architecture": "EfficientDet-D0",
+  "input_size": "320x320",
+  "num_classes": 80,
+  "detection_threshold": 0.5,
+  
+  "training_details": {
+    "training_dataset": "COCO (Common Objects in Context)",
+    "training_time": "50,000 iterations",
+    "training_hardware": "NVIDIA GeForce RTX 3080",
+    "optimizer": "Adam",
+    "learning_rate": 0.001
+  },
+  
+  "inference_details": {
+    "inference_hardware": "NVIDIA Jetson Xavier NX",
+    "inference_framework": "TensorFlow Lite",
+    "conversion_tool": "TensorFlow Lite Converter",
+    "conversion_options": "Quantization to INT8"
+  },
+  
+  "performance_metrics": {
+    "mean_average_precision": 0.75,
+    "inference_speed_fps": 30,
+    "model_size_mb": 5.2
+  },
+  
+  "additional_features": [
+    "Real-time object tracking",
+    "Non-maximum Suppression (NMS)"
+  ],
+  
+  "deployment": "MechaBot-X1 is designed for deployment on robotics platforms for autonomous navigation and object recognition."
+}
