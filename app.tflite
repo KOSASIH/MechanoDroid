@@ -1,0 +1,156 @@
+
+TensorFlow
+
+
+KOSASIH
+TensorFlow Core
+
+TensorFlow
+
+Halaman ini diterjemahkan oleh Cloud Translation API.
+Switch to English
+TensorFlow adalah platform sumber terbuka ujung ke ujung untuk pembelajaran mesin
+TensorFlow memudahkan pemula dan pakar untuk membuat model pembelajaran mesin. Lihat bagian di bawah ini untuk memulai.
+
+Lihat tutorial
+Tutorial menunjukkan cara menggunakan TensorFlow dengan contoh menyeluruh yang lengkap.
+
+Lihat panduannya
+Panduan menjelaskan konsep dan komponen TensorFlow.
+
+
+Untuk pemula
+Tempat terbaik untuk memulai adalah dengan Sequential API yang mudah digunakan. Anda dapat membuat model dengan menggabungkan blok penyusun. Jalankan contoh “Hello World” di bawah, lalu kunjungi tutorial untuk mempelajari lebih lanjut.
+
+Untuk mempelajari ML, lihat halaman pendidikan kami. Mulailah dengan kurikulum pilihan untuk meningkatkan keterampilan Anda di area dasar ML.
+
+
+import tensorflow as tf
+mnist = tf.keras.datasets.mnist
+
+(x_train, y_train),(x_test, y_test) = mnist.load_data()
+x_train, x_test = x_train / 255.0, x_test / 255.0
+
+model = tf.keras.models.Sequential([
+  tf.keras.layers.Flatten(input_shape=(28, 28)),
+  tf.keras.layers.Dense(128, activation='relu'),
+  tf.keras.layers.Dropout(0.2),
+  tf.keras.layers.Dense(10, activation='softmax')
+])
+
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+
+model.fit(x_train, y_train, epochs=5)
+model.evaluate(x_test, y_test)
+Jalankan kode sekarang Coba di notebook interaktif Google
+Untuk para ahli
+Subclassing API menyediakan antarmuka yang ditentukan demi dijalankan untuk penelitian lanjutan. Buat kelas untuk model Anda, lalu tulis forward pass secara imperatif. Buat lapisan kustom, aktivasi, dan loop pelatihan dengan mudah. Jalankan contoh “Hello World” di bawah, lalu kunjungi tutorial untuk mempelajari lebih lanjut.
+
+
+class MyModel(tf.keras.Model):
+  def __init__(self):
+    super(MyModel, self).__init__()
+    self.conv1 = Conv2D(32, 3, activation='relu')
+    self.flatten = Flatten()
+    self.d1 = Dense(128, activation='relu')
+    self.d2 = Dense(10, activation='softmax')
+
+  def call(self, x):
+    x = self.conv1(x)
+    x = self.flatten(x)
+    x = self.d1(x)
+    return self.d2(x)
+model = MyModel()
+
+with tf.GradientTape() as tape:
+  logits = model(images)
+  loss_value = loss(logits, labels)
+grads = tape.gradient(loss_value, model.trainable_variables)
+optimizer.apply_gradients(zip(grads, model.trainable_variables))
+Jalankan kode sekarang Coba di notebook interaktif Google
+Pelajari tentang hubungan antara TensorFlow dan Keras
+API tingkat tinggi TensorFlow didasarkan pada standar Keras API untuk menentukan dan melatih jaringan neural. Keras memungkinkan pembuatan prototipe cepat, penelitian canggih, dan produksi—semuanya dengan API yang mudah digunakan.
+
+Baca Panduan Keras untuk TensorFlow 2 
+Solusi untuk masalah umum
+Jelajahi tutorial langkah demi langkah untuk membantu proyek Anda.
+
+
+Dasar-dasar ML dengan Keras
+Jaringan saraf pertama Anda
+Latih jaringan neural untuk mengklasifikasikan gambar pakaian, seperti sepatu kets dan kemeja, dalam ikhtisar singkat program TensorFlow lengkap ini.
+
+
+Generatif
+Pembuatan gambar
+Hasilkan gambar berdasarkan prompt teks menggunakan implementasi KerasCV dari model Stable Diffusion dari stability.ai.
+
+
+Audio
+Pengenalan audio sederhana
+Praproses file WAV dan latih model pengenalan ucapan otomatis dasar.
+
+Berita & pengumuman
+Lihat blog kami untuk pembaruan tambahan, dan berlangganan buletin TensorFlow kami untuk mendapatkan pengumuman terbaru yang dikirim langsung ke kotak masuk Anda.
+
+Mendaftar 
+
+Distributed Fast Fourier Transform in TensorFlow
+Fast Fourier Transform is an important method of signal processing, which is commonly used in a number of ways, including speeding up convolutions, extracting features, and regularizing models. Distributed Fast Fourier Transform (Distributed FFT)
+
+25 Agustus 2023
+
+Read the blog
+
+What's new in TensorFlow 2.13 and Keras 2.13?
+TensorFlow 2.13 and Keras 2.13 have been released! Highlights of this release include publishing Apple Silicon wheels, the new Keras V3 format being default for.keras extension files and many more! TensorFlow 2.13 is the first version to provide
+
+25 Juli 2023
+
+Read the blog
+
+Training a recommendation model with dynamic embeddings
+Modern recommenders heavily leverage embeddings to create vector representations of each user and candidate item. These embedding can then be used to calculate the similarity between users and items, so that users are recommended candidate items that
+
+20 April 2023
+
+Read the blog
+
+What’s new in TensorFlow 2.12 and Keras 2.12?
+TensorFlow 2.12 and Keras 2.12 have been released! Highlights of this release include the new Keras model saving and exporting format, the keras.utils.FeatureSpace utility, SavedModel fingerprinting, Python 3.11 wheels for TensorFlow and many more.
+
+28 Maret 2023
+
+Read the blog
+Partisipasi komunitas
+Lihat lebih banyak cara untuk berpartisipasi dalam komunitas TensorFlow.
+
+Masyarakat 
+TensorFlow di GitHub
+Ajukan pertanyaan di Forum TensorFlow
+Tumpukan Luapan
+Pengumuman hanya milis
+Jelajahi proyek komunitas Dev Library
+Mulai dengan TensorFlow
+Jelajahi tutorial
+Tetap terhubung
+Blog
+Forum
+GitHub
+Twitter
+YouTube
+Dukungan
+Issue Tracker
+Catatan rilis
+Stack Overflow
+Pedoman brand
+Mengutip TensorFlow
+Persyaratan
+Privasi
+Daftar untuk menerima newsletter TensorFlow
+Berlangganan
+
+Bahasa Indonesia
+Halaman baru telah dimuat.
